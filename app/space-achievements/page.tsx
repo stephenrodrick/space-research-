@@ -5,19 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
-import {
-  ExternalLink,
-  Search,
-  Rocket,
-  Award,
-  BookOpen,
-  Globe,
-  Telescope,
-  Zap,
-  Star,
-  Users,
-  Calendar,
-} from "lucide-react"
+import { ExternalLink, Search, Rocket, Award, BookOpen, Globe, Telescope, Zap } from "lucide-react"
 import Image from "next/image"
 
 interface Achievement {
@@ -30,9 +18,6 @@ interface Achievement {
   wikipediaTitle: string
   significance: string
   funFact?: string
-  participants?: string[]
-  duration?: string
-  cost?: string
 }
 
 interface WikipediaData {
@@ -55,13 +40,10 @@ const spaceAchievements: Achievement[] = [
     description: "First artificial satellite to orbit Earth, marking the beginning of the Space Age.",
     date: "October 4, 1957",
     category: "Satellite",
-    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=300&h=200&fit=crop",
+    image: "/placeholder.svg?height=200&width=300",
     wikipediaTitle: "Sputnik_1",
     significance: "Started the Space Race and proved orbital mechanics",
     funFact: "It transmitted radio signals for 21 days before its batteries died",
-    participants: ["Soviet Union", "Sergei Korolev"],
-    duration: "21 days active",
-    cost: "$7.5 million (1957 USD)",
   },
   {
     id: "gagarin",
@@ -69,13 +51,10 @@ const spaceAchievements: Achievement[] = [
     description: "Yuri Gagarin becomes the first human to journey into outer space and orbit Earth.",
     date: "April 12, 1961",
     category: "Human Spaceflight",
-    image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=300&h=200&fit=crop",
+    image: "/placeholder.svg?height=200&width=300",
     wikipediaTitle: "Yuri_Gagarin",
     significance: "Proved humans could survive in space",
     funFact: "The flight lasted 108 minutes and Gagarin was 27 years old",
-    participants: ["Yuri Gagarin", "Soviet Space Program"],
-    duration: "108 minutes",
-    cost: "$15 million (1961 USD)",
   },
   {
     id: "apollo11",
@@ -83,13 +62,10 @@ const spaceAchievements: Achievement[] = [
     description: "Neil Armstrong and Buzz Aldrin become the first humans to walk on the Moon.",
     date: "July 20, 1969",
     category: "Moon Landing",
-    image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=300&h=200&fit=crop",
+    image: "/placeholder.svg?height=200&width=300",
     wikipediaTitle: "Apollo_11",
     significance: "Fulfilled Kennedy's goal and demonstrated American technological prowess",
     funFact: "The computer that guided them had less power than a modern calculator",
-    participants: ["Neil Armstrong", "Buzz Aldrin", "Michael Collins"],
-    duration: "8 days mission",
-    cost: "$25 billion (1973 USD)",
   },
   {
     id: "voyager",
@@ -97,13 +73,10 @@ const spaceAchievements: Achievement[] = [
     description: "Twin spacecraft launched to explore the outer solar system and beyond.",
     date: "August 20, 1977",
     category: "Deep Space",
-    image: "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=300&h=200&fit=crop",
+    image: "/placeholder.svg?height=200&width=300",
     wikipediaTitle: "Voyager_program",
     significance: "First spacecraft to reach interstellar space",
     funFact: "Voyager 1 is now over 14 billion miles from Earth and still transmitting",
-    participants: ["NASA", "JPL"],
-    duration: "45+ years active",
-    cost: "$865 million (1977 USD)",
   },
   {
     id: "hubble",
@@ -111,13 +84,10 @@ const spaceAchievements: Achievement[] = [
     description: "Revolutionary space telescope that transformed our understanding of the universe.",
     date: "April 24, 1990",
     category: "Observatory",
-    image: "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=300&h=200&fit=crop",
+    image: "/placeholder.svg?height=200&width=300",
     wikipediaTitle: "Hubble_Space_Telescope",
     significance: "Revolutionized astronomy and provided stunning images of deep space",
     funFact: "Has traveled more than 4 billion miles and made over 1.5 million observations",
-    participants: ["NASA", "ESA"],
-    duration: "33+ years active",
-    cost: "$16 billion (total program)",
   },
   {
     id: "iss",
@@ -125,13 +95,10 @@ const spaceAchievements: Achievement[] = [
     description: "Largest human-made object in space and a symbol of international cooperation.",
     date: "November 20, 1998",
     category: "Space Station",
-    image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=300&h=200&fit=crop",
+    image: "/placeholder.svg?height=200&width=300",
     wikipediaTitle: "International_Space_Station",
     significance: "Longest continuous human presence in space",
     funFact: "Orbits Earth every 90 minutes at 17,500 mph",
-    participants: ["NASA", "Roscosmos", "ESA", "JAXA", "CSA"],
-    duration: "25+ years active",
-    cost: "$150 billion (total program)",
   },
   {
     id: "mars-rovers",
@@ -139,13 +106,10 @@ const spaceAchievements: Achievement[] = [
     description: "Robotic missions that revolutionized our understanding of Mars.",
     date: "January 4, 2004",
     category: "Planetary Exploration",
-    image: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=300&h=200&fit=crop",
+    image: "/placeholder.svg?height=200&width=300",
     wikipediaTitle: "Mars_Exploration_Rover",
     significance: "Proved Mars once had water and could have supported life",
     funFact: "Spirit and Opportunity were designed for 90-day missions but operated for years",
-    participants: ["NASA", "JPL"],
-    duration: "Spirit: 6 years, Opportunity: 15 years",
-    cost: "$820 million (total mission)",
   },
   {
     id: "jwst",
@@ -153,13 +117,10 @@ const spaceAchievements: Achievement[] = [
     description: "Most powerful space telescope ever built, successor to Hubble.",
     date: "December 25, 2021",
     category: "Observatory",
-    image: "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=300&h=200&fit=crop",
+    image: "/placeholder.svg?height=200&width=300",
     wikipediaTitle: "James_Webb_Space_Telescope",
     significance: "Can see the first galaxies formed after the Big Bang",
     funFact: "Its mirror is so sensitive it could detect a candle on the moon",
-    participants: ["NASA", "ESA", "CSA"],
-    duration: "5-10 years planned",
-    cost: "$10 billion (development)",
   },
   {
     id: "spacex-dragon",
@@ -167,13 +128,10 @@ const spaceAchievements: Achievement[] = [
     description: "First commercial spacecraft to deliver cargo to the International Space Station.",
     date: "May 25, 2012",
     category: "Commercial Spaceflight",
-    image: "https://images.unsplash.com/photo-1517976487492-5750f3195933?w=300&h=200&fit=crop",
+    image: "/placeholder.svg?height=200&width=300",
     wikipediaTitle: "SpaceX_Dragon",
     significance: "Opened the era of commercial spaceflight",
     funFact: "First privately-funded spacecraft to orbit and recover successfully",
-    participants: ["SpaceX", "NASA"],
-    duration: "Ongoing missions",
-    cost: "$396 million (development)",
   },
   {
     id: "perseverance",
@@ -181,13 +139,10 @@ const spaceAchievements: Achievement[] = [
     description: "Advanced rover searching for signs of ancient microbial life on Mars.",
     date: "February 18, 2021",
     category: "Planetary Exploration",
-    image: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=300&h=200&fit=crop",
+    image: "/placeholder.svg?height=200&width=300",
     wikipediaTitle: "Perseverance_(rover)",
     significance: "First mission designed specifically to search for past life on Mars",
     funFact: "Carries a helicopter named Ingenuity that achieved powered flight on Mars",
-    participants: ["NASA", "JPL"],
-    duration: "2+ years active",
-    cost: "$2.7 billion (total mission)",
   },
 ]
 
@@ -313,8 +268,7 @@ export default function SpaceAchievements() {
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-4">Human Space Achievements</h1>
           <p className="text-gray-300">
-            Explore humanity's greatest milestones in space exploration with detailed information and search
-            capabilities
+            Explore humanity's greatest milestones in space exploration and search for any space topic
           </p>
         </div>
 
@@ -435,28 +389,6 @@ export default function SpaceAchievements() {
                   </div>
                 )}
 
-                {/* Additional Details */}
-                <div className="space-y-2 mb-4">
-                  {achievement.participants && (
-                    <div className="flex items-center text-xs text-gray-400">
-                      <Users className="h-3 w-3 mr-1" />
-                      <span>{achievement.participants.join(", ")}</span>
-                    </div>
-                  )}
-                  {achievement.duration && (
-                    <div className="flex items-center text-xs text-gray-400">
-                      <Calendar className="h-3 w-3 mr-1" />
-                      <span>{achievement.duration}</span>
-                    </div>
-                  )}
-                  {achievement.cost && (
-                    <div className="flex items-center text-xs text-gray-400">
-                      <Star className="h-3 w-3 mr-1" />
-                      <span>Cost: {achievement.cost}</span>
-                    </div>
-                  )}
-                </div>
-
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center text-gray-400 text-sm">
                     <Award className="mr-1 h-4 w-4" />
@@ -531,8 +463,7 @@ export default function SpaceAchievements() {
                         </Badge>
                       </div>
                       <p className="text-gray-400 text-sm mb-2">{achievement.description}</p>
-                      <p className="text-blue-300 text-xs mb-2">{achievement.significance}</p>
-                      {achievement.cost && <p className="text-green-300 text-xs">Cost: {achievement.cost}</p>}
+                      <p className="text-blue-300 text-xs">{achievement.significance}</p>
                     </div>
                   </div>
                 ))}

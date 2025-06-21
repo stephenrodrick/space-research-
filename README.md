@@ -32,44 +32,44 @@ This organization contains the following projects:
 
 ### 1. Clone the repo
 
-```bash
+\`\`\`bash
 git clone https://github.com/stephenrodrick/space-research.git
 cd space-research
-````
+\`\`\``
 
 
 ### 2. Install dependencies
 
 * **C version (`mpmc`)**
 
-  ```bash
+  \`\`\`bash
   cd mpmc
   ./configure && make && sudo make install
-  ```
+  \`\`\`
 
 * **Python modules**
 
-  ```bash
+  \`\`\`bash
   pip install -r mmc/requirements.txt
   pip install phast-forcefields smirnoff-plugins
-  ```
+  \`\`\`
 
 * **Shell tools**
 
-  ```bash
+  \`\`\`bash
   cd common-scripts
   chmod +x *.sh
-  ```
+  \`\`\`
 
 ### 3. Run a demo
 
-```bash
+\`\`\`bash
 # C binary usage
 mpmc --input examples/sample.inp --ff phast-forcefields/example.offxml
 
 # Python wrapper example
 python mmc/run_simulation.py --config examples/config.yaml
-```
+\`\`\`
 
 > *Replace paths with your local environment setup.*
 
@@ -77,7 +77,7 @@ python mmc/run_simulation.py --config examples/config.yaml
 
 ## 📁 Repository Structure
 
-```
+\`\`\`
 /
 ├── mpmc/                     # Core C-based Monte Carlo engine
 ├── mmc/                      # Python API and automation scripts
@@ -86,7 +86,7 @@ python mmc/run_simulation.py --config examples/config.yaml
 ├── space-group-environment/  # Shell environment setup and utilities
 ├── smirnoff-plugins/         # Force-field plugin modules
 └── mpmc_testing/             # Test suite for C and Python modules
-```
+\`\`\`
 
 ---
 
@@ -94,10 +94,10 @@ python mmc/run_simulation.py --config examples/config.yaml
 
 Quick test suite execution:
 
-```bash
+\`\`\`bash
 cd mpmc_testing
 pytest
-```
+\`\`\`
 
 Ensure both C engine and Python interfaces are verified.
 
@@ -138,4 +138,3 @@ For issues, questions, or collaboration inquiries, please open a GitHub issue or
 * Leverage HPC environment scripts in `common-scripts` for efficient scheduling.
 
 ---
-
