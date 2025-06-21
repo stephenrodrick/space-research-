@@ -8,8 +8,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Space Visualization Hub",
-  description: "Explore space through real-time satellite tracking, historical events, and human achievements",
+  title: "SpaceViz - Space Visualization Hub",
+  description:
+    "Explore space through real-time satellite tracking, historical events, professional tools, and human achievements in space exploration",
     generator: 'v0.dev'
 }
 
